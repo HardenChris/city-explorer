@@ -4,7 +4,7 @@ import axios from 'axios';
 import CityForm from './CityForm.js';
 import SearchCard from './SearchCard.js';
 import Weather from './Weather.js';
-
+import { Alert } from 'react-bootstrap';
 
 export default class App extends Component {
     
@@ -54,6 +54,7 @@ export default class App extends Component {
                 {this.state.location.map && <SearchCard location={this.state.location}/>}
 
                 {this.state.location.map && <Weather location={this.state.location} />}
+                {this.state.error && <Alert variant='danger'>Something is broken.</Alert>}
             </>
         )
     }
