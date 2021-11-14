@@ -3,6 +3,8 @@ import { Component } from 'react';
 import axios from 'axios';
 import CityForm from './CityForm.js';
 import SearchCard from './SearchCard.js';
+import Weather from './Weather.js';
+
 
 export default class App extends Component {
     
@@ -47,9 +49,11 @@ export default class App extends Component {
             <>
                 <CityForm getLocation={this.getLocation}/>
                 {/* <input onChange={this.handleChange} value={this.state.cityValue}/> */}
-                <p>{this.state.cityName}</p>
-                <button onClick={this.handleClick}>SEARCH</button>
+                {/* <p>{this.state.cityName}</p>
+                <button onClick={this.handleClick}>SEARCH</button> */}
                 {this.state.location.map && <SearchCard location={this.state.location}/>}
+
+                {this.state.location.map && <Weather location={this.state.location} />}
             </>
         )
     }
