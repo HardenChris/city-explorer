@@ -12,7 +12,7 @@ export default class Weather extends Component {
     }
 
     getWeatherForecast = async () => {
-        const url = `${process.env.REACT_APP_SERVER_URL}/weather?city=${this.props.location.display_name.split(',')[0]}&lat=${this.props.location.lat}&lon=${this.props.location.lon}`;
+        const url = `${process.env.REACT_APP_API_URL}/weather?city=${this.props.location.display_name.split(',')[0]}&lat=${this.props.location.lat}&lon=${this.props.location.lon}`;
         let response = await axios.get(url)
         console.log(response.data)
         this.setState({ weatherForecast: response.data});
